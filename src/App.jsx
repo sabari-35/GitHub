@@ -16,16 +16,12 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
+      <h1>main 2</h1>
+      
       <p className="read-the-docs">
+        the changes are done in the main2 branch
+      </p>
+    <p>
         branch main1
       </p>
       <p>the changes are done in main 1 branch</p>

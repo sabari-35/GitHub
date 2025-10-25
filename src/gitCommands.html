@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔥 Git Command Cheat Sheet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1f2937, #111827);
+      color: #fff;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #38bdf8;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #38bdf8;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 50px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #1e293b;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #334155;
+    }
+
+    tr:hover {
+      background-color: #475569;
+      transition: 0.2s ease-in-out;
+    }
+
+    code {
+      color: #22d3ee;
+      background: rgba(0,0,0,0.3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    h2 {
+      margin-top: 50px;
+      color: #facc15;
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 Git Command Cheat Sheet</h1>
+
+  <h2>🧱 INITIALIZING</h2>
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><code>git config --global user.name "Your Name"</code></td><td>Sets your name for all commits in Git.</td></tr>
+    <tr><td><code>git config --global user.email "Your Email"</code></td><td>Sets your email address for commits.</td></tr>
+    <tr><td><code>git config --global init.defaultBranch main</code></td><td>Sets <code>main</code> as the default branch for new repos.</td></tr>
+    <tr><td><code>git init</code></td><td>Initializes a new Git repository in the current folder.</td></tr>
+    <tr><td><code>git add .</code></td><td>Stages all changes (new, modified, deleted files).</td></tr>
+    <tr><td><code>git commit -m "message"</code></td><td>Commits the staged changes with a message.</td></tr>
+    <tr><td><code>git remote add origin [URL]</code></td><td>Connects your local repo to a GitHub repository.</td></tr>
+    <tr><td><code>git push origin main</code></td><td>Uploads local commits to the remote <code>main</code> branch.</td></tr>
+    <tr><td><code>git status</code></td><td>Shows the status of changes (staged, unstaged, untracked).</td></tr>
+    <tr><td><code>git log</code></td><td>Displays commit history.</td></tr>
+    <tr><td><code>git checkout [commit-hash]</code></td><td>Moves HEAD to a specific commit.</td></tr>
+    <tr><td><code>git checkout main</code></td><td>Switches back to the main branch.</td></tr>
+    <tr><td><code>git checkout -f main</code></td><td>Forces checkout discarding any local changes.</td></tr>
+  </table>
+
+  <h2>🌿 BRANCHING</h2>
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><code>git branch main1</code></td><td>Creates a new branch named <code>main1</code>.</td></tr>
+    <tr><td><code>git checkout main1</code></td><td>Switches to branch <code>main1</code>.</td></tr>
+    <tr><td><code>git checkout -b main2</code></td><td>Creates and switches to a new branch <code>main2</code>.</td></tr>
+    <tr><td><code>git branch newBranchName OldBranchName</code></td><td>Creates a new branch from an existing one.</td></tr>
+    <tr><td><code>git push --set-upstream origin branchName</code></td><td>Links the local branch to a remote one for future pushes.</td></tr>
+    <tr><td><code>git push -u origin branchName</code></td><td>Same as above, sets upstream tracking branch.</td></tr>
+    <tr><td><code>git fetch</code></td><td>Downloads updates from remote without merging them.</td></tr>
+  </table>
+
+  <h2>🔁 PULL REQUESTS & MERGING</h2>
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><code>git pull origin main</code></td><td>Fetches and merges latest changes from remote.</td></tr>
+    <tr><td><code>git pull origin main --rebase</code></td><td>Fetches and applies changes on top of your commits (cleaner history).</td></tr>
+    <tr><td><code>git merge branchName</code></td><td>Merges a branch into the current one.</td></tr>
+    <tr><td><code>git merge --abort</code></td><td>Cancels an ongoing merge safely.</td></tr>
+  </table>
+
+  <h2>🧩 RESET & REVERT</h2>
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><code>git reset</code></td><td>Unstages changes but keeps them in working directory.</td></tr>
+    <tr><td><code>git reset [commit-hash]</code></td><td>Moves HEAD to a specific commit (keeps changes unstaged).</td></tr>
+    <tr><td><code>git reset --soft [commit-hash]</code></td><td>Moves HEAD and keeps all changes staged (for recommit).</td></tr>
+    <tr><td><code>git reset --hard [commit-hash]</code></td><td>Completely resets to a commit, discarding all changes.</td></tr>
+    <tr><td><code>git revert [commit-hash]</code></td><td>Creates a new commit that undoes a previous commit.</td></tr>
+  </table>
+
+  <h2>📦 STASHING</h2>
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><code>git stash</code></td><td>Saves your uncommitted changes temporarily.</td></tr>
+    <tr><td><code>git stash list</code></td><td>Shows a list of stashed changes.</td></tr>
+    <tr><td><code>git stash apply [stash-id]</code></td><td>Applies a specific stash back to your working directory.</td></tr>
+  </table>
+
+  <h2>⚙️ EXTRA USEFUL COMMANDS</h2>
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><code>git diff</code></td><td>Shows line-by-line changes before committing.</td></tr>
+    <tr><td><code>git clone [URL]</code></td><td>Copies an existing remote repository locally.</td></tr>
+    <tr><td><code>git branch -a</code></td><td>Lists all local and remote branches.</td></tr>
+    <tr><td><code>git push origin main --force</code></td><td>Forcefully overwrites remote branch (use with caution).</td></tr>
+    <tr><td><code>git log --oneline</code></td><td>Shows compact commit history.</td></tr>
+  </table>
+
+  <footer>
+    © 2025 Git Command Reference | Designed by Sabari 🚀
+  </footer>
+</body>
+</html>
