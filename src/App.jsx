@@ -21,7 +21,10 @@ function App() {
       <p className="read-the-docs">
         the changes are done in the main2 branch
       </p>
-
+    <p>
+        branch main1
+      </p>
+      <p>the changes are done in main 1 branch</p>
     </>
   )
 }
