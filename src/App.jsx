@@ -26,8 +26,9 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        branch main1
       </p>
+      <p>the changes are done in main 1 branch</p>
     </>
   )
 }
